@@ -1,0 +1,46 @@
+#Use this file to input cosmic and simulation parameters for PiLASTIC.
+
+#Remember to include decimals to declare doubles when using C++.
+
+#Cosmic parameters
+Omega_m = 0.31		#Measured in the present epoch.
+Omega_b = 0.049
+H0 = 68.0
+z_init = 99.0		#Can replace the redshifts with with a_init, a_final.
+z_final = 0.0
+
+boxsize = 600.0 	##Mpc
+meshpoints = 64		#runtime scales as N^3 log N
+sigma = 0		##Gaussian smoothing scale in Mpc.  Set to 0.0001 if not using.
+cs2_0 = 0	  	#fluid EFT parameter values in the present day.  Time dependence is assumed to be D^2 and 
+cv2_0 = 0   		#D^2/(Omega_M**(1/2)), respectively
+
+#Initial Conditions
+Pk_fitting_option = 0 	##0 = use the file below.  1 = use Einstein and Hu  2 = use BBKS.
+Pk_input_file = mPk_from_CLASS.dat
+n_tilt = 0.96		##if fitting option is 1 or 2
+T_CMB = 2.7255
+initial_conditions_path = initial_conditions.txt ##initial conditions written to here.
+
+#PiLASTIC
+auto_stop_enabled = 1		##stops the code if delta < -1 due to numerical error
+max_steps = 6000
+step_factor = 0.01		## scale factor multiplied by this factor at each step
+show_initial_conditions = 0 	## set to 1 to make a 3D plot of the initial conditions (Python only)
+show_final_configuration = 0 	## set to 1 to make a 3D plot of the final configuration (Python only)
+pion_output_path = output_hack.txt
+pion_prime_output_path = output_prime.txt
+overdensity_output_path = overdensity.txt
+
+#Power spectrum plotting options for Plots
+plot_initial_conditions_Pk = 1
+plot_pion_Pk = 1
+plot_pion_Pk_NLO = 1
+plot_pion_prime_Pk = 0
+plot_overdensity_Pk = 0
+
+#3D plotting options
+plot_initial_conditions_3D = 0
+plot_pion_3D = 1
+plot_pion_prime_3D = 0
+plot_overdensity_3D = 1
