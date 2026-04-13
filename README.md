@@ -31,16 +31,14 @@ Cosmic and simulation input parameters can be adjusted here.  The order of param
 -sigma is the scale of Gaussian smoothing for both initial and evolved conditions.
 -cs2_0 and cv2_0 are the present day values of the dimensionless sound speed and viscosity EFT parameters.
 
-
 Gaussian_ICs.py
 generates Gaussian initial conditions for the pion field and outputs them as a text file.  The desired linear power spectrum can be calculated from a CLASS output file (given as a .dat file) or can be fit using either the Eisentein-Hu or the BBKS analytic fitting formula.
 
-PiLASTIC.py/PiLASTIC++.cpp
-evolves the pion field from the initial conditions until nonlinear structure begins to form, and produces a snapshot of pi(x), pi'(x) and delta(x) as a text file.  This step can be run either in Python or in C++.  PiLASTIC++ requires having the FFTW3 library installed.  To compile in Ubuntu, use the command g++ PiLASTIC++.cpp -std=c++17 -lfftw3 -lm
+PLASTIC.py/PLASTIC++.cpp
+evolves the pion field from the initial conditions until nonlinear structure begins to form, and produces a snapshot of pi(x), pi'(x) and delta(x) as a text file.  This step can be run either in Python or in C++.  PLASTIC++ requires having the FFTW3 library installed.  To compile in Ubuntu, use the command g++ PLASTIC++.cpp -std=c++17 -lfftw3 -lm
 
 Plots.py
 generates graphs of the power spectra and 3D fields for pi(x), pi'(x), and delta(x).
-
 
 ******************************************************************
 
